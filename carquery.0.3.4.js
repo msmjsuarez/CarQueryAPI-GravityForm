@@ -80,7 +80,7 @@ CarQuery.prototype = {
     min_weight: 	"",    
     min_weight_id: 	"cq-min-weight",    
     min_year: 		"",
-    min_year_id: 	"cq-min-year",    
+    min_year_id: 	"cq-min-year",   
     model_data_id: 	"",
     model_list_id: 	"",    
     model_select_id: 	"",
@@ -109,14 +109,14 @@ CarQuery.prototype = {
 	
 	//Check if initial values were set
 	this.settings = new Object();
-	if(year != null)
-		this.saveSetting('year', year);
-	if(make_id != null)
-		this.saveSetting('make', make_id);
-	if(model != null)
-		this.saveSetting('model', model);
-	if(trim != null)
-		this.saveSetting('trim', trim);
+	// if(year != null)
+	// 	this.saveSetting('year', year);
+	// if(make_id != null)
+	// 	this.saveSetting('make', make_id);
+	// if(model != null)
+	// 	this.saveSetting('model', model);
+	// if(trim != null)
+	// 	this.saveSetting('trim', trim);
 	
 	//Load settings from cookie if it exists
 	this.loadSettings(this.cookie_name);
@@ -817,7 +817,7 @@ CarQuery.prototype = {
     {
 	if(!this.responseError(data))
 	{
-    	   	var options = '<option value="">Please choose a make</option>';
+    	var options = '<option value="">Please choose a make</option>';
 		var makes = data.Makes;
 		for (var key in makes)
 		{
@@ -838,8 +838,7 @@ CarQuery.prototype = {
     {    
     	var models = data.Models;
     
-        //var options = '';
-        var options = '<option value="">Please choose a model</option>';
+    	var options = '<option value="">Please choose a model</option>';
         for (var i = 0; i < models.length; i++)
         {
            var s = '';
@@ -856,7 +855,7 @@ CarQuery.prototype = {
         var trims = data.Trims;
         var display;
         
-        var options = '';
+        var options = '<option value="">Please choose a trim</option>';
         for (var i = 0; i < trims.length; i++)
         {
         	var s = '';
